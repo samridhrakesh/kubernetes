@@ -1,13 +1,19 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: samridh4-test
+  name: samridh5-test
   labels:
     env: test
 spec:
   containers:
-  - image: httpd
+  - image: samridhrakesh/for:v1
     name: samridhk
+    env:
+    - name: INTERVAL
+      valueFrom:
+       configMapKeyRef:
+        name: myconfig
+        key: INTERVAL
     ports:
-    - containerPort: 8082
+    - containerPort: 80
       protocol: TCP
