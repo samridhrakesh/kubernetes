@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: List
+
+items:
+
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: tg-pv0
+    spec:
+      capacity:
+        storage: 1Gi
+    accessModes:
+      - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  nfs:
+    server: 192.168.186.148
+    path: /opt/test1
+
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: tg-pv1
+    spec:
+      capacity:
+        storage: 1Gi
+    accessModes:
+      - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  nfs:
+    server: 192.168.186.148
+    path: /opt/test2
+
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: tg-pv2
+    spec:
+      capacity:
+        storage: 1Gi
+    accessModes:
+      - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  nfs:
+    server: 192.168.186.148
+    path: /opt/test3
